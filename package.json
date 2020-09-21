@@ -1,0 +1,41 @@
+{
+  "name": "iso-fs",
+  "version": "0.1.0",
+  "description": "Filesystem es6 module for all environments, loosely based on NodeJS fs.",
+  "main": "fs.node.js",
+  "module": "fs.js",
+  "scripts": {
+    "test": "iso-test ./test.js",
+    "preinstall": "gpm -n .. -t .. -u https -d 1 -i .",
+    "postinstall": "node -e \"try { require('../esm/esm.js')(module); } catch (e) {require('child_process').execSync('npm i', {cwd: require('path').join('..', 'esm')})}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/isysd-mirror/iso-fs.git"
+  },
+  "homepage": "https://github.com/isysd-mirror/iso-fs.git",
+  "keywords": [
+    "isomorphic",
+    "guld",
+    "filesystem",
+    "fs"
+  ],
+  "author": "isysd",
+  "license": "MIT",
+  "dependencies": {
+    "always-global": "../always-global",
+    "iso-path": "../iso-path",
+    "iso-process": "../iso-process",
+    "esm": "../esm"
+  },
+  "peerDependencies": {
+    "gpm": "https://github.com/IonicaBizau/gpm.git"
+  },
+  "devDependencies": {
+    "iso-test": "../iso-test"
+  },
+  "readme": "README.md",
+  "engines": {
+    "node": ">=7"
+  }
+}
